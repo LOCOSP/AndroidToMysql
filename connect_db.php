@@ -5,19 +5,11 @@ $db = 'employee101';
 $db_host = 'localhost';
 $db_port = 8889;
 
-$link = mysqli_init();
-$success = mysqli_real_connect(
-   $link,
-   $db_host,
-   $db_user,
-   $db_password,
-   $db,
-   $db_port
-);
-if ($success) {
-  echo "Connection success - ";
+
+$link = mysqli_connect($db_host, $db_user, $db_password, $db, $db_port);
+if ($link) {
+  echo "<pre>Connection success :-)</pre>";
 }
 else {
-  echo "Connection not success - ";
+  echo "<pre>Connection not success</pre>";
 }
-?>
